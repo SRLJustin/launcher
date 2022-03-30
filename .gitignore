@@ -12,6 +12,9 @@ dependency-reduced-pom.xml
 *.exe
 *.tar.gz
 packr.jar
+packr_*.jar
+jdk-11.0.8+10-jre/
+jdk-17+35/
 native-linux/
 native-osx/
 native-win32/
