@@ -39,13 +39,13 @@ echo "f200fb7088dbb5e61e0835fe7b0d7fc1310beda192dacd764927567dcd7c4f0f  packr_${
 java -jar packr_${PACKR_VERSION}.jar \
     packr/linux-x64-config.json
 
-pushd native-linux/OpenOSRS.AppDir
+pushd native-linux-x86_64/OpenOSRS.AppDir
 mkdir -p jre/lib/amd64/server/
 ln -s ../../server/libjvm.so jre/lib/amd64/server/ # packr looks for libjvm at this hardcoded path
 popd
 
 # Symlink AppRun -> OpenOSRS
-pushd native-linux/OpenOSRS.AppDir/
+pushd nnative-linux-x86_64/OpenOSRS.AppDir/
 ln -s OpenOSRS AppRun
 popd
 
@@ -53,5 +53,5 @@ curl -Lo appimagetool-x86_64.AppImage https://github.com/AppImage/AppImageKit/re
 chmod 755 appimagetool-x86_64.AppImage
 
 ./appimagetool-x86_64.AppImage \
-	native-linux/OpenOSRS.AppDir/ \
-	native-linux/OpenOSRS.AppImage
+	native-linux-x86_64/OpenOSRS.AppDir/ \
+	native-linux-x86_64/OpenOSRS.AppImage
